@@ -22,4 +22,30 @@ The request body should be in JSON format and include the following fields:
      - `email` (string): User's email address (must be a valid email).
      - `password` (string): User's password (min 6 characters).
      - `token` (string): JWT Token.
-   
+
+
+# Login Endpoint
+
+## **POST** `/users/login`
+
+Authenticate a user using their email and password.
+
+---
+
+## Request
+
+### Headers
+- `Content-Type`: `application/json`
+
+### Body
+| Field      | Type     | Required | Description                |
+|------------|----------|----------|----------------------------|
+| `email`    | `string` | Yes      | The user's email address (must be a valid email address).  |
+| `password` | `string` | Yes      | The user's password (min 6 characters).       |
+
+**Example Request Body:**
+```json
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
