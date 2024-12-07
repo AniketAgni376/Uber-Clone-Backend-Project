@@ -60,7 +60,7 @@ Logout the current user and blacklist the token provided in cookie or headers
 
 ### HTTP Method
 
-'GET"
+'GET'
 
 ### Authentication
 
