@@ -50,7 +50,7 @@ Authenticate a user using their email and password.
   "password": "password123"
 }
 
-
+```
 
 ## `/users/logout` Endpoint
 
