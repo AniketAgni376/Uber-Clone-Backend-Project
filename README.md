@@ -49,3 +49,19 @@ Authenticate a user using their email and password.
   "email": "user@example.com",
   "password": "password123"
 }
+
+
+
+## `/users/logout` Endpoint
+
+### Description
+
+Logout the current user and blacklist the token provided in cookie or headers
+
+### HTTP Method
+
+'GET"
+
+### Authentication
+
+Requires a valid JWT token in the Authorization header or cookie:
