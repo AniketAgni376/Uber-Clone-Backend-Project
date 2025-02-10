@@ -12,7 +12,7 @@ const Captainlogin = () => {
               email:email,
               password:password
          })   
-         console.log(userData)
+        //  console.log(userData)
         setEmail('')
         setPassword('')
         
@@ -21,7 +21,13 @@ const Captainlogin = () => {
   return (
     <div className='p-7 flex flex-col justify-between h-screen'>
        <div>
-       <img className='w-20 mb-2' src="https://www.svgrepo.com/show/505031/uber-driver.svg" alt="" srcset="" />
+    <Link to="/">
+       <img
+         className="w-16 mb-10"
+         src="https://www.svgrepo.com/show/505031/uber-driver.svg"
+         alt="Uber Driver Logo"
+       />
+     </Link>
       <form onSubmit={(e)=>{
         submitHandler(e)
         }}>

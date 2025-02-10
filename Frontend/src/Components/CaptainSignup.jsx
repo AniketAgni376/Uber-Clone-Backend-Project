@@ -14,7 +14,7 @@ const Captainsignup = () => {
       e.preventDefault()
       
       setUserData({
-        username:{      
+        fullName:{      
           firstName:firstName,
           lastName:lastName
         },
@@ -23,7 +23,7 @@ const Captainsignup = () => {
       })
       
       
-      console.log(userData)
+      // console.log(userData)
   
   
   
@@ -38,17 +38,24 @@ const Captainsignup = () => {
     <div>
           <div className='p-7 flex flex-col justify-between h-screen'>
        <div>
-       <img className='w-16 mb-10' src="https://www.svgrepo.com/show/505031/uber-driver.svg" alt="" srcset="" />
+       <Link to="/">
+      <img
+        className="w-16 mb-10"
+        src="https://www.svgrepo.com/show/505031/uber-driver.svg"
+        alt="Uber Driver Logo"
+      />
+    </Link>
+
       <form onSubmit={(e)=>{
         submitHandler(e)
         }}>
 
-        <h3 className="text-base font-medium mb-2">What's your name</h3>
+        <h3 className="text-lg w-full font-medium mb-2">What's our Captain's name</h3>
           
-          <div className='flex gap-3'>
+          <div className='flex gap-4 mb-7'>
           <input 
         required
-        className='bg-[#eeeeee] w-1/2 mb-7 rounded px-4 py-2 border text-lg placeholder:text-base' 
+        className='bg-[#eeeeee] w-1/2  rounded px-4 py-2 border text-lg placeholder:text-base' 
         type="text" 
         placeholder='First name' 
         value={firstName}
@@ -60,7 +67,7 @@ const Captainsignup = () => {
         <input 
         required
         
-        className='bg-[#eeeeee] w-1/2 mb-7 rounded px-4 py-2 border text-lg placeholder:text-base' 
+        className='bg-[#eeeeee] w-1/2 rounded px-4 py-2 border text-lg placeholder:text-base' 
         type="text" 
         placeholder='Last name' 
         value={lastName}
@@ -72,7 +79,7 @@ const Captainsignup = () => {
           </div>
         
         
-        <h3 className="text-base font-medium mb-2">What's your email</h3>
+        <h3 className="text-lg font-medium mb-2">What's our Captain's email</h3>
         <input 
         required
         

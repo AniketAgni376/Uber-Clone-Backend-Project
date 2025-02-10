@@ -12,7 +12,7 @@ const UserLogin = () => {
               email:email,
               password:password
          })   
-         console.log(userData)
+        //  console.log(userData)
         setEmail('')
         setPassword('')
         
@@ -21,7 +21,13 @@ const UserLogin = () => {
   return (
     <div className='p-7 flex flex-col justify-between h-screen'>
        <div>
-       <img className='w-16 mb-10' src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="" srcset="" />
+       <Link to="/">
+      <img
+        className="w-16 mb-10"
+        src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png"
+        alt="Uber User Logo"
+      />
+    </Link>
       <form onSubmit={(e)=>{
         submitHandler(e)
         }}>

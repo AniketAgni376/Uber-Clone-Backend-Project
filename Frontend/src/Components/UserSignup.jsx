@@ -13,7 +13,7 @@ const UserSignup = (e) => {
     e.preventDefault()
     
     setUserData({
-      username:{      
+      fullName:{      
         firstName:firstName,
         lastName:lastName
       },
@@ -22,7 +22,7 @@ const UserSignup = (e) => {
     })
     
     
-    console.log(userData)
+    // console.log(userData)
 
 
 
@@ -38,7 +38,13 @@ const UserSignup = (e) => {
     <div>
           <div className='p-7 flex flex-col justify-between h-screen'>
        <div>
-       <img className='w-16 mb-10' src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt="" srcset="" />
+       <Link to="/">
+      <img
+        className="w-16 mb-10"
+        src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png"
+        alt="Uber User Logo"
+      />
+    </Link>
       <form onSubmit={(e)=>{
         submitHandler(e)
         }}>
@@ -101,7 +107,7 @@ const UserSignup = (e) => {
         <button
         className='bg-[#111] text-white font-semibold mb-3 rounded px-4 py-2  w-full text-base placeholder:text-sm'
         >Create Account</button>
-        <p className="text-center">Already have a account? <Link to='/captain-login' className="text-blue-600">Login here?</Link></p>
+        <p className="text-center">Already have a account? <Link to='/login' className="text-blue-600">Login here?</Link></p>
       </form>
        </div>
 
