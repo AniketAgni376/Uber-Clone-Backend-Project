@@ -4,7 +4,7 @@ const { validationResult } = require('express-validator');
 const blackListTokenModel = require('../models/blacklistToken.model');
 
 module.exports.registerUser = async (req, res, next) => {
-    console.log('Request Body:', req.body);
+   //  console.log('Request Body:', req.body);
      const errors = validationResult(req);
      if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
