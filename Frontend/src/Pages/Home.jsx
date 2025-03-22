@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { useRef } from 'react';
 import 'remixicon/fonts/remixicon.css'
 import LocationSearchPanel from '../Components/LocationSearchPanel';
+import VehiclePanel from '../Components/VehiclePanel';
 
 
 
@@ -13,7 +14,9 @@ const Home = () => {
   const[destination, setDestination] = useState('')
   const[panelOpen, setPanelOpen] = useState(false)
   const panelRef = useRef(null)
+  const vehiclePanelRef = useRef(null)
   const panelCloseRef = useRef(null)
+   const [vehiclePanel, setVehiclePanel] = useState(false)
 
 
   const submitHandler = (e) => {
@@ -21,6 +24,7 @@ const Home = () => {
     }
 
  useGSAP(function(){
+
   if(panelOpen){
       gsap.to(panelRef.current,{
         height: "70%", 
@@ -39,19 +43,38 @@ const Home = () => {
         ease: "back.in(1.5)", // Reverse of back.out(1.5)
         opacity: 0, // Fade-out effect
       })
+
       gsap.to(panelCloseRef.current,{
         opacity: 0, // Ensures smooth fade-in 
         padding: 0
        })
     }
  }, [panelOpen])
+
+  useGSAP(function(){
+    if(vehiclePanel){
+      gsap.to(vehiclePanelRef.current,{
+       transform:'translateY(0)',
+        duration: 0.3,
+        ease: "back.out(1.5)",
+        opacity: 1
+      })
+    }else{
+      gsap.to(vehiclePanelRef.current,{
+        transform:'translateY(100%)',
+        duration: 0.3,
+        ease: "back.in(1.5)",
+        opacity: 0
+      })
+    }
+  },[vehiclePanel])
     
   return (
-    <div>
-        <img className='w-16 absolute left-5 top-5' src="https://www.freepnglogos.com/uploads/uber-logo-transparent-3.png" alt="" srcSet="" />
+    <div className='h-screen relative overflow-hidden'>
+        <img className='w-16 absolute left-5 top-5' src="https://www.freepnglogos.com/uploads/uber-logo-transparent-3.png" alt="" />
     <div className='h-screen w-screen'>
       {/* image for temp map */}
-      <img className='h-full w-full object-cover' src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif" alt="" srcSet="" />
+      <img className='h-full w-full object-cover' src="https://miro.medium.com/v2/resize:fit:1400/0*gwMx05pqII5hbfmX.gif" alt="" />
     </div>
          <div className='flex flex-col justify-end h-screen absolute top-0 w-full'>
          <div className='h-[30%] p-6 bg-white relative'>
@@ -93,9 +116,13 @@ const Home = () => {
          </form>
          </div>
                      <div ref={panelRef} className='h-0 bg-white'>
-                          <LocationSearchPanel />
+                          <LocationSearchPanel setPanelOpen={setPanelOpen} setVehiclePanel={setVehiclePanel} />
                     </div>
-              </div>
+         </div>
+         <div ref={vehiclePanelRef} className='fixed z-10 w-full bottom-0 translate-y-full px-3 py-10 pt-14 bg-white'>
+          <VehiclePanel setVehiclePanel={setVehiclePanel}/>
+            
+         </div>
          </div>
   )
 }
