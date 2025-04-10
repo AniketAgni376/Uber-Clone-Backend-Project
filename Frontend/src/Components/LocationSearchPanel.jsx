@@ -9,6 +9,7 @@ const LocationSearchPanel = (props) => {
         'Chowk Metro Station Terminal-1, Lucknow' ,
         'Thakurganj Metro Station Terminal-2, Lucknow' ,
         'Balaganj Metro Station Terminal-1, Lucknow' ,
+        'Super Marble, Sarfarazganj, Lucknow' ,
         // Add more locations here...
  
     ]
