@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-// import axios from 'axios';
 import "remixicon/fonts/remixicon.css";
 import LocationSearchPanel from "../Components/LocationSearchPanel";
 import VehiclePanel from "../Components/VehiclePanel";
@@ -23,7 +22,7 @@ const Home = () => {
   const [vehiclePanel, setVehiclePanel] = useState(false);
   const [confirmRidePanel, setConfirmRidePanel] = useState(false);
   const [vehicleFound, setVehicleFound] = useState(false);
-  const [waitingForDriver, setWaitingForDriverRef] = useState(false)
+  const [waitingForDriver, setWaitingforDriver] = useState(false)
 
 
   const submitHandler = (e) => {
